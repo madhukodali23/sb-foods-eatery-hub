@@ -27,7 +27,7 @@ const foodItems = [
     price: 18.99,
     discount: 20,
     rating: 4.8,
-    image: "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&h=300&fit=crop&crop=center",
+    image: "https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?w=500&h=400&fit=crop",
     restaurant: "Mama's Italian Kitchen",
     category: "pizza"
   },
@@ -38,7 +38,7 @@ const foodItems = [
     price: 21.99,
     discount: 15,
     rating: 4.7,
-    image: "https://images.unsplash.com/photo-1628840042765-356cda07504e?w=400&h=300&fit=crop&crop=center",
+    image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=500&h=400&fit=crop",
     restaurant: "Tony's Pizza Palace",
     category: "pizza"
   },
@@ -49,7 +49,7 @@ const foodItems = [
     price: 23.99,
     discount: 0,
     rating: 4.6,
-    image: "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&h=300&fit=crop&crop=center",
+    image: "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500&h=400&fit=crop",
     restaurant: "Pizza Express",
     category: "pizza"
   },
@@ -60,7 +60,7 @@ const foodItems = [
     price: 19.99,
     discount: 10,
     rating: 4.5,
-    image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=400&h=300&fit=crop&crop=center",
+    image: "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=500&h=400&fit=crop",
     restaurant: "Green Garden Pizza",
     category: "pizza"
   },
@@ -71,7 +71,7 @@ const foodItems = [
     price: 26.99,
     discount: 5,
     rating: 4.9,
-    image: "https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?w=400&h=300&fit=crop&crop=center",
+    image: "https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?w=500&h=400&fit=crop",
     restaurant: "Carnivore's Choice",
     category: "pizza"
   },
@@ -82,7 +82,7 @@ const foodItems = [
     price: 20.99,
     discount: 0,
     rating: 4.3,
-    image: "https://images.unsplash.com/photo-1565299507177-b0ac66763828?w=400&h=300&fit=crop&crop=center",
+    image: "https://images.unsplash.com/photo-1565299507177-b0ac66763828?w=500&h=400&fit=crop",
     restaurant: "Island Pizza Co.",
     category: "pizza"
   },
@@ -95,7 +95,7 @@ const foodItems = [
     price: 15.99,
     discount: 0,
     rating: 4.6,
-    image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&h=300&fit=crop&crop=center",
+    image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500&h=400&fit=crop",
     restaurant: "Burger Junction",
     category: "burgers"
   },
@@ -106,7 +106,7 @@ const foodItems = [
     price: 18.99,
     discount: 15,
     rating: 4.8,
-    image: "https://images.unsplash.com/photo-1551615593-ef5fe247e8f7?w=400&h=300&fit=crop&crop=center",
+    image: "https://images.unsplash.com/photo-1551615593-ef5fe247e8f7?w=500&h=400&fit=crop",
     restaurant: "Smoky Grill",
     category: "burgers"
   },
@@ -117,7 +117,7 @@ const foodItems = [
     price: 14.99,
     discount: 10,
     rating: 4.4,
-    image: "https://images.unsplash.com/photo-1525059696034-4967a729002e?w=400&h=300&fit=crop&crop=center",
+    image: "https://images.unsplash.com/photo-1525059696034-4967a729002e?w=500&h=400&fit=crop",
     restaurant: "Green Bites",
     category: "burgers"
   },
@@ -128,7 +128,7 @@ const foodItems = [
     price: 16.99,
     discount: 0,
     rating: 4.7,
-    image: "https://images.unsplash.com/photo-1606755962773-d324e2d53352?w=400&h=300&fit=crop&crop=center",
+    image: "https://images.unsplash.com/photo-1606755962773-d324e2d53352?w=500&h=400&fit=crop",
     restaurant: "Chicken Palace",
     category: "burgers"
   },
@@ -139,7 +139,7 @@ const foodItems = [
     price: 17.99,
     discount: 5,
     rating: 4.2,
-    image: "https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=400&h=300&fit=crop&crop=center",
+    image: "https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=500&h=400&fit=crop",
     restaurant: "Ocean View",
     category: "burgers"
   },
@@ -152,7 +152,7 @@ const foodItems = [
     price: 22.99,
     discount: 15,
     rating: 4.9,
-    image: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=400&h=300&fit=crop&crop=center",
+    image: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=500&h=400&fit=crop",
     restaurant: "Spice Route Indian",
     category: "indian"
   },
@@ -163,7 +163,7 @@ const foodItems = [
     price: 21.99,
     discount: 10,
     rating: 4.8,
-    image: "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=400&h=300&fit=crop&crop=center",
+    image: "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=500&h=400&fit=crop",
     restaurant: "Mumbai Express",
     category: "indian"
   },
@@ -174,7 +174,7 @@ const foodItems = [
     price: 19.99,
     discount: 0,
     rating: 4.7,
-    image: "https://images.unsplash.com/photo-1563379091339-03246963d51a?w=400&h=300&fit=crop&crop=center",
+    image: "https://images.unsplash.com/photo-1563379091339-03246963d51a?w=500&h=400&fit=crop",
     restaurant: "Biryani House",
     category: "indian"
   },
@@ -185,7 +185,7 @@ const foodItems = [
     price: 18.99,
     discount: 20,
     rating: 4.6,
-    image: "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=400&h=300&fit=crop&crop=center",
+    image: "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=500&h=400&fit=crop",
     restaurant: "Vegetarian Delight",
     category: "indian"
   },
@@ -196,7 +196,7 @@ const foodItems = [
     price: 26.99,
     discount: 0,
     rating: 4.5,
-    image: "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=400&h=300&fit=crop&crop=center",
+    image: "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=500&h=400&fit=crop",
     restaurant: "Royal Kitchen",
     category: "indian"
   },
@@ -209,7 +209,7 @@ const foodItems = [
     price: 17.99,
     discount: 0,
     rating: 4.4,
-    image: "https://images.unsplash.com/photo-1559314809-0f31657def5e?w=400&h=300&fit=crop&crop=center",
+    image: "https://images.unsplash.com/photo-1559314809-0f31657def5e?w=500&h=400&fit=crop",
     restaurant: "Golden Dragon",
     category: "chinese"
   },
@@ -220,7 +220,7 @@ const foodItems = [
     price: 18.99,
     discount: 15,
     rating: 4.6,
-    image: "https://images.unsplash.com/photo-1512058564366-18510be2db19?w=400&h=300&fit=crop&crop=center",
+    image: "https://images.unsplash.com/photo-1512058564366-18510be2db19?w=500&h=400&fit=crop",
     restaurant: "Wok This Way",
     category: "chinese"
   },
@@ -231,7 +231,7 @@ const foodItems = [
     price: 16.99,
     discount: 10,
     rating: 4.5,
-    image: "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=400&h=300&fit=crop&crop=center",
+    image: "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=500&h=400&fit=crop",
     restaurant: "Noodle Express",
     category: "chinese"
   },
@@ -242,7 +242,7 @@ const foodItems = [
     price: 14.99,
     discount: 0,
     rating: 4.3,
-    image: "https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=400&h=300&fit=crop&crop=center",
+    image: "https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=500&h=400&fit=crop",
     restaurant: "Rice & Roll",
     category: "chinese"
   },
@@ -255,7 +255,7 @@ const foodItems = [
     price: 8.99,
     discount: 0,
     rating: 4.9,
-    image: "https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?w=400&h=300&fit=crop&crop=center",
+    image: "https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?w=500&h=400&fit=crop",
     restaurant: "Sweet Dreams",
     category: "desserts"
   },
@@ -266,7 +266,7 @@ const foodItems = [
     price: 7.99,
     discount: 10,
     rating: 4.8,
-    image: "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=400&h=300&fit=crop&crop=center",
+    image: "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=500&h=400&fit=crop",
     restaurant: "Dolce Vita",
     category: "desserts"
   },
@@ -277,7 +277,7 @@ const foodItems = [
     price: 6.99,
     discount: 15,
     rating: 4.7,
-    image: "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=400&h=300&fit=crop&crop=center",
+    image: "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=500&h=400&fit=crop",
     restaurant: "Cake Corner",
     category: "desserts"
   },
@@ -288,7 +288,7 @@ const foodItems = [
     price: 5.99,
     discount: 0,
     rating: 4.5,
-    image: "https://images.unsplash.com/photo-1551024506-0bccd828d307?w=400&h=300&fit=crop&crop=center",
+    image: "https://images.unsplash.com/photo-1551024506-0bccd828d307?w=500&h=400&fit=crop",
     restaurant: "Frozen Treats",
     category: "desserts"
   },
@@ -299,7 +299,7 @@ const foodItems = [
     price: 6.99,
     discount: 5,
     rating: 4.6,
-    image: "https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=400&h=300&fit=crop&crop=center",
+    image: "https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=500&h=400&fit=crop",
     restaurant: "Grandma's Kitchen",
     category: "desserts"
   },
@@ -310,7 +310,7 @@ const foodItems = [
     price: 4.99,
     discount: 20,
     rating: 4.4,
-    image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=400&h=300&fit=crop&crop=center",
+    image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=500&h=400&fit=crop",
     restaurant: "Brownie Bliss",
     category: "desserts"
   },
@@ -323,7 +323,7 @@ const foodItems = [
     price: 19.99,
     discount: 0,
     rating: 4.8,
-    image: "https://images.unsplash.com/photo-1621996346565-e3dbc353d2e5?w=400&h=300&fit=crop&crop=center",
+    image: "https://images.unsplash.com/photo-1621996346565-e3dbc353d2e5?w=500&h=400&fit=crop",
     restaurant: "Pasta Perfection",
     category: "pasta"
   },
@@ -334,7 +334,7 @@ const foodItems = [
     price: 16.99,
     discount: 10,
     rating: 4.6,
-    image: "https://images.unsplash.com/photo-1572441713132-51dbeb50905b?w=400&h=300&fit=crop&crop=center",
+    image: "https://images.unsplash.com/photo-1572441713132-51dbeb50905b?w=500&h=400&fit=crop",
     restaurant: "Spicy Spoon",
     category: "pasta"
   },
@@ -345,7 +345,7 @@ const foodItems = [
     price: 18.99,
     discount: 15,
     rating: 4.7,
-    image: "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=400&h=300&fit=crop&crop=center",
+    image: "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=500&h=400&fit=crop",
     restaurant: "Creamy Corner",
     category: "pasta"
   },
@@ -356,7 +356,7 @@ const foodItems = [
     price: 22.99,
     discount: 0,
     rating: 4.9,
-    image: "https://images.unsplash.com/photo-1574894709920-11b28e7367e3?w=400&h=300&fit=crop&crop=center",
+    image: "https://images.unsplash.com/photo-1574894709920-11b28e7367e3?w=500&h=400&fit=crop",
     restaurant: "Italian Heritage",
     category: "pasta"
   },
@@ -369,7 +369,7 @@ const foodItems = [
     price: 24.99,
     discount: 0,
     rating: 4.9,
-    image: "https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=400&h=300&fit=crop&crop=center",
+    image: "https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=500&h=400&fit=crop",
     restaurant: "Tokyo Sushi Bar",
     category: "japanese"
   },
@@ -380,7 +380,7 @@ const foodItems = [
     price: 18.99,
     discount: 10,
     rating: 4.6,
-    image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&h=300&fit=crop&crop=center",
+    image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=500&h=400&fit=crop",
     restaurant: "Samurai Kitchen",
     category: "japanese"
   },
@@ -391,7 +391,7 @@ const foodItems = [
     price: 16.99,
     discount: 5,
     rating: 4.8,
-    image: "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=400&h=300&fit=crop&crop=center",
+    image: "https://images.unsplash.com/photo-1623341214825-9f4f963727da?w=500&h=400&fit=crop",
     restaurant: "Ramen House",
     category: "japanese"
   },
@@ -402,7 +402,7 @@ const foodItems = [
     price: 21.99,
     discount: 15,
     rating: 4.5,
-    image: "https://images.unsplash.com/photo-1617196034796-73dfa7b1fd56?w=400&h=300&fit=crop&crop=center",
+    image: "https://images.unsplash.com/photo-1617196034796-73dfa7b1fd56?w=500&h=400&fit=crop",
     restaurant: "Zen Garden",
     category: "japanese"
   },
@@ -415,7 +415,7 @@ const foodItems = [
     price: 12.99,
     discount: 0,
     rating: 4.5,
-    image: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=400&h=300&fit=crop&crop=center",
+    image: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=500&h=400&fit=crop",
     restaurant: "Fiesta Mexicana",
     category: "mexican"
   },
@@ -426,7 +426,7 @@ const foodItems = [
     price: 14.99,
     discount: 10,
     rating: 4.7,
-    image: "https://images.unsplash.com/photo-1565299585323-38174c979a39?w=400&h=300&fit=crop&crop=center",
+    image: "https://images.unsplash.com/photo-1565299585323-38174c979a39?w=500&h=400&fit=crop",
     restaurant: "Coastal Cantina",
     category: "mexican"
   },
@@ -437,7 +437,7 @@ const foodItems = [
     price: 11.99,
     discount: 15,
     rating: 4.4,
-    image: "https://images.unsplash.com/photo-1618040996337-56904b7850b9?w=400&h=300&fit=crop&crop=center",
+    image: "https://images.unsplash.com/photo-1618040996337-56904b7850b9?w=500&h=400&fit=crop",
     restaurant: "El Sombrero",
     category: "mexican"
   },
@@ -448,7 +448,7 @@ const foodItems = [
     price: 8.99,
     discount: 0,
     rating: 4.3,
-    image: "https://images.unsplash.com/photo-1506807803488-8eacdeb3c174?w=400&h=300&fit=crop&crop=center",
+    image: "https://images.unsplash.com/photo-1506807803488-8eacdeb3c174?w=500&h=400&fit=crop",
     restaurant: "Aztec Kitchen",
     category: "mexican"
   }
@@ -559,6 +559,11 @@ const CustomerDashboard = () => {
                       src={item.image}
                       alt={item.name}
                       className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                      onError={(e) => {
+                        console.log(`Failed to load image for ${item.name}: ${item.image}`);
+                        // Fallback to placeholder
+                        e.currentTarget.src = "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=500&h=400&fit=crop";
+                      }}
                     />
                     {item.discount > 0 && (
                       <Badge className="absolute top-3 left-3 bg-green-500 hover:bg-green-600 text-white">
