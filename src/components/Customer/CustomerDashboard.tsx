@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Search, Filter, Star, Plus, Minus, ShoppingCart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -24,7 +23,7 @@ const foodItems = [
     price: 18.99,
     discount: 20,
     rating: 4.8,
-    image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=300&h=200&fit=crop&crop=center",
+    image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=300&h=200&fit=crop&crop=center",
     restaurant: "Mama's Italian Kitchen",
     category: "pizza"
   },
@@ -35,7 +34,7 @@ const foodItems = [
     price: 15.99,
     discount: 0,
     rating: 4.6,
-    image: "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=300&h=200&fit=crop&crop=center",
+    image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=300&h=200&fit=crop&crop=center",
     restaurant: "Burger Junction",
     category: "burgers"
   },
@@ -46,7 +45,7 @@ const foodItems = [
     price: 22.99,
     discount: 15,
     rating: 4.9,
-    image: "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=300&h=200&fit=crop&crop=center",
+    image: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=300&h=200&fit=crop&crop=center",
     restaurant: "Spice Route Indian",
     category: "indian"
   }

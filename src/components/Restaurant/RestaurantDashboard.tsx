@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Plus, Edit, Trash2, Eye, Clock, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -17,7 +16,7 @@ const menuItems = [
     price: 18.99,
     category: "Pizza",
     status: "active",
-    image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=200&h=150&fit=crop&crop=center"
+    image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=200&h=150&fit=crop&crop=center"
   },
   {
     id: 2,
@@ -26,7 +25,7 @@ const menuItems = [
     price: 22.99,
     category: "Pasta",
     status: "active",
-    image: "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=200&h=150&fit=crop&crop=center"
+    image: "https://images.unsplash.com/photo-1621996346565-e3dbc353d2e5?w=200&h=150&fit=crop&crop=center"
   }
 ];
 

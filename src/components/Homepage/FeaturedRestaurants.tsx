@@ -1,4 +1,3 @@
-
 import { Star, Clock, MapPin } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -10,7 +9,7 @@ const restaurants = [
     rating: 4.8,
     deliveryTime: "25-35 min",
     category: "Italian",
-    image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=300&h=200&fit=crop&crop=center",
+    image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=300&h=200&fit=crop&crop=center",
     distance: "0.8 km",
     promoted: true
   },
@@ -20,7 +19,7 @@ const restaurants = [
     rating: 4.6,
     deliveryTime: "30-40 min",
     category: "Indian",
-    image: "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=300&h=200&fit=crop&crop=center",
+    image: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=300&h=200&fit=crop&crop=center",
     distance: "1.2 km",
     promoted: false
   },
@@ -30,7 +29,7 @@ const restaurants = [
     rating: 4.9,
     deliveryTime: "20-30 min",
     category: "Japanese",
-    image: "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=300&h=200&fit=crop&crop=center",
+    image: "https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=300&h=200&fit=crop&crop=center",
     distance: "0.5 km",
     promoted: true
   },
@@ -40,7 +39,7 @@ const restaurants = [
     rating: 4.5,
     deliveryTime: "15-25 min",
     category: "American",
-    image: "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=300&h=200&fit=crop&crop=center",
+    image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=300&h=200&fit=crop&crop=center",
     distance: "0.9 km",
     promoted: false
   }
