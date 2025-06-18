@@ -9,7 +9,7 @@ const restaurants = [
     rating: 4.8,
     deliveryTime: "25-35 min",
     category: "Italian",
-    image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=300&h=200&fit=crop&crop=center",
+    image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=300&h=200&fit=crop&crop=center",
     distance: "0.8 km",
     promoted: true
   },
@@ -66,6 +66,10 @@ const FeaturedRestaurants = () => {
                   src={restaurant.image}
                   alt={restaurant.name}
                   className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=300&h=200&fit=crop&crop=center";
+                  }}
                 />
                 {restaurant.promoted && (
                   <Badge className="absolute top-3 left-3 bg-green-500 hover:bg-green-600 text-white">
