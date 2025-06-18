@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Header from '@/components/Layout/Header';
 import HeroBanner from '@/components/Homepage/HeroBanner';
 import FeaturedRestaurants from '@/components/Homepage/FeaturedRestaurants';
+import AboutSection from '@/components/Homepage/AboutSection';
 import AuthModal from '@/components/Auth/AuthModal';
 import CustomerDashboard from '@/components/Customer/CustomerDashboard';
 import RestaurantDashboard from '@/components/Restaurant/RestaurantDashboard';
@@ -103,8 +104,13 @@ const Index = () => {
         onAuthClick={handleAuthClick} 
         onLogout={handleLogout}
       />
-      <HeroBanner />
-      <FeaturedRestaurants />
+      <div id="hero">
+        <HeroBanner />
+      </div>
+      <div id="restaurants">
+        <FeaturedRestaurants />
+      </div>
+      <AboutSection />
       
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12">

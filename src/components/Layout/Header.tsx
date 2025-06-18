@@ -43,15 +43,26 @@ const Header = ({
     }
   };
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsMenuOpen(false);
+  };
+
   return (
     <header className="bg-white shadow-lg border-b-4 border-red-500">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <h1 className="text-3xl font-bold bg-gradient-to-r from-red-600 to-orange-600 bg-clip-text text-transparent">
+            <button 
+              onClick={() => scrollToSection('hero')}
+              className="text-3xl font-bold bg-gradient-to-r from-red-600 to-orange-600 bg-clip-text text-transparent hover:opacity-80 transition-opacity"
+            >
               SB Foods
-            </h1>
+            </button>
           </div>
 
           {/* Search Bar for Customer */}
@@ -74,15 +85,24 @@ const Header = ({
           <div className="hidden md:flex items-center space-x-6">
             {!userType && (
               <>
-                <a href="#" className="text-gray-700 hover:text-red-600 font-medium transition-colors">
+                <button 
+                  onClick={() => scrollToSection('hero')}
+                  className="text-gray-700 hover:text-red-600 font-medium transition-colors"
+                >
                   Home
-                </a>
-                <a href="#" className="text-gray-700 hover:text-red-600 font-medium transition-colors">
+                </button>
+                <button 
+                  onClick={() => scrollToSection('restaurants')}
+                  className="text-gray-700 hover:text-red-600 font-medium transition-colors"
+                >
                   Restaurants
-                </a>
-                <a href="#" className="text-gray-700 hover:text-red-600 font-medium transition-colors">
+                </button>
+                <button 
+                  onClick={() => scrollToSection('about')}
+                  className="text-gray-700 hover:text-red-600 font-medium transition-colors"
+                >
                   About
-                </a>
+                </button>
               </>
             )}
             
@@ -199,15 +219,24 @@ const Header = ({
             <div className="space-y-2">
               {!userType && (
                 <>
-                  <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-red-50 rounded-lg">
+                  <button 
+                    onClick={() => scrollToSection('hero')}
+                    className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-red-50 rounded-lg"
+                  >
                     Home
-                  </a>
-                  <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-red-50 rounded-lg">
+                  </button>
+                  <button 
+                    onClick={() => scrollToSection('restaurants')}
+                    className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-red-50 rounded-lg"
+                  >
                     Restaurants
-                  </a>
-                  <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-red-50 rounded-lg">
+                  </button>
+                  <button 
+                    onClick={() => scrollToSection('about')}
+                    className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-red-50 rounded-lg"
+                  >
                     About
-                  </a>
+                  </button>
                   <Button onClick={onAuthClick} className="w-full mt-4 bg-red-600 hover:bg-red-700 text-white">
                     Sign In
                   </Button>
