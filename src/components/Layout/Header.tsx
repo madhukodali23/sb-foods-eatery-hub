@@ -13,6 +13,7 @@ interface HeaderProps {
   onCartClick?: () => void;
   onOrdersClick?: () => void;
   onProfileClick?: () => void;
+  onBrowseFoodClick?: () => void;
 }
 
 const Header = ({ 
@@ -23,7 +24,8 @@ const Header = ({
   onSearch,
   onCartClick,
   onOrdersClick,
-  onProfileClick
+  onProfileClick,
+  onBrowseFoodClick
 }: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
@@ -109,7 +111,7 @@ const Header = ({
             {userType === 'customer' && (
               <>
                 <button 
-                  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                  onClick={onBrowseFoodClick}
                   className="text-gray-700 hover:text-red-600 font-medium transition-colors"
                 >
                   Browse Food
@@ -247,7 +249,7 @@ const Header = ({
                 <>
                   <button 
                     onClick={() => {
-                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                      onBrowseFoodClick?.();
                       setIsMenuOpen(false);
                     }}
                     className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-red-50 rounded-lg"

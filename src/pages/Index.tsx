@@ -13,15 +13,20 @@ const Index = () => {
   const [userType, setUserType] = useState<'customer' | 'restaurant' | 'admin' | null>(null);
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [dashboardView, setDashboardView] = useState<'browse' | 'orders' | 'profile'>('browse');
+  const [cartItems, setCartItems] = useState(3); // Initial cart count
 
   const handleLogin = (type: 'customer' | 'restaurant' | 'admin') => {
     setUserType(type);
     setIsAuthModalOpen(false);
+    // Reset to browse view when logging in
+    setDashboardView('browse');
   };
 
   const handleLogout = () => {
     setUserType(null);
     setSearchQuery('');
+    setDashboardView('browse');
   };
 
   const handleAuthClick = () => {
@@ -30,18 +35,35 @@ const Index = () => {
 
   const handleSearch = (query: string) => {
     setSearchQuery(query);
+    // Ensure we're on browse view when searching
+    if (userType === 'customer') {
+      setDashboardView('browse');
+    }
   };
 
   const handleCartClick = () => {
     console.log('Cart clicked');
+    setDashboardView('browse'); // Show cart in browse view
   };
 
   const handleOrdersClick = () => {
     console.log('Orders clicked');
+    setDashboardView('orders');
   };
 
   const handleProfileClick = () => {
     console.log('Profile clicked');
+    setDashboardView('profile');
+  };
+
+  const handleBrowseFoodClick = () => {
+    console.log('Browse Food clicked');
+    setDashboardView('browse');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleItemAddedToCart = () => {
+    setCartItems(prev => prev + 1);
   };
 
   // Render different dashboards based on user type
@@ -52,17 +74,20 @@ const Index = () => {
           userType={userType} 
           onAuthClick={handleAuthClick} 
           onLogout={handleLogout}
-          cartItems={3}
+          cartItems={cartItems}
           onSearch={handleSearch}
           onCartClick={handleCartClick}
           onOrdersClick={handleOrdersClick}
           onProfileClick={handleProfileClick}
+          onBrowseFoodClick={handleBrowseFoodClick}
         />
         <CustomerDashboard 
           searchQuery={searchQuery}
           onCartToggle={handleCartClick}
           onOrdersClick={handleOrdersClick}
           onProfileClick={handleProfileClick}
+          currentView={dashboardView}
+          onItemAddedToCart={handleItemAddedToCart}
         />
       </div>
     );
@@ -110,7 +135,9 @@ const Index = () => {
       <div id="restaurants">
         <FeaturedRestaurants />
       </div>
-      <AboutSection />
+      <div id="about">
+        <AboutSection />
+      </div>
       
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12">

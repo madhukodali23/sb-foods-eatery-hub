@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Search, Star, Plus, Minus, ShoppingCart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -382,7 +382,7 @@ const foodItems = [
     price: 18.99,
     discount: 10,
     rating: 4.6,
-    image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=500&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1555939585323-38174c979a39?w=500&h=400&fit=crop",
     restaurant: "Samurai Kitchen",
     category: "japanese"
   },
@@ -469,13 +469,17 @@ interface CustomerDashboardProps {
   onCartToggle?: () => void;
   onOrdersClick?: () => void;
   onProfileClick?: () => void;
+  currentView?: 'browse' | 'orders' | 'profile';
+  onItemAddedToCart?: () => void;
 }
 
 const CustomerDashboard = ({ 
   searchQuery = '', 
   onCartToggle,
   onOrdersClick,
-  onProfileClick 
+  onProfileClick,
+  currentView = 'browse',
+  onItemAddedToCart
 }: CustomerDashboardProps) => {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
@@ -488,6 +492,26 @@ const CustomerDashboard = ({
     minRating: 0,
     hasDiscount: false
   });
+
+  // Handle view changes from props
+  useEffect(() => {
+    if (currentView === 'orders') {
+      setIsOrdersOpen(true);
+      setIsCartOpen(false);
+      setIsProfileOpen(false);
+    } else if (currentView === 'profile') {
+      setIsProfileOpen(true);
+      setIsCartOpen(false);
+      setIsOrdersOpen(false);
+    } else if (currentView === 'browse') {
+      // Show cart if there are items, otherwise close all modals
+      if (cartItems.length > 0) {
+        setIsCartOpen(true);
+      }
+      setIsOrdersOpen(false);
+      setIsProfileOpen(false);
+    }
+  }, [currentView, cartItems.length]);
 
   // Filter items based on search, category, and filters
   const filteredItems = foodItems.filter(item => {
@@ -569,6 +593,8 @@ const CustomerDashboard = ({
       }];
     });
     setIsCartOpen(true);
+    // Notify parent component that an item was added
+    onItemAddedToCart?.();
   };
 
   const updateCartQuantity = (id: number, change: number) => {
