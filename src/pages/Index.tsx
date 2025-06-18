@@ -11,6 +11,7 @@ import AdminDashboard from '@/components/Admin/AdminDashboard';
 const Index = () => {
   const [userType, setUserType] = useState<'customer' | 'restaurant' | 'admin' | null>(null);
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
 
   const handleLogin = (type: 'customer' | 'restaurant' | 'admin') => {
     setUserType(type);
@@ -19,10 +20,27 @@ const Index = () => {
 
   const handleLogout = () => {
     setUserType(null);
+    setSearchQuery('');
   };
 
   const handleAuthClick = () => {
     setIsAuthModalOpen(true);
+  };
+
+  const handleSearch = (query: string) => {
+    setSearchQuery(query);
+  };
+
+  const handleCartClick = () => {
+    console.log('Cart clicked');
+  };
+
+  const handleOrdersClick = () => {
+    console.log('Orders clicked');
+  };
+
+  const handleProfileClick = () => {
+    console.log('Profile clicked');
   };
 
   // Render different dashboards based on user type
@@ -34,8 +52,17 @@ const Index = () => {
           onAuthClick={handleAuthClick} 
           onLogout={handleLogout}
           cartItems={3}
+          onSearch={handleSearch}
+          onCartClick={handleCartClick}
+          onOrdersClick={handleOrdersClick}
+          onProfileClick={handleProfileClick}
         />
-        <CustomerDashboard />
+        <CustomerDashboard 
+          searchQuery={searchQuery}
+          onCartToggle={handleCartClick}
+          onOrdersClick={handleOrdersClick}
+          onProfileClick={handleProfileClick}
+        />
       </div>
     );
   }
@@ -47,6 +74,7 @@ const Index = () => {
           userType={userType} 
           onAuthClick={handleAuthClick} 
           onLogout={handleLogout}
+          onProfileClick={handleProfileClick}
         />
         <RestaurantDashboard />
       </div>
@@ -60,6 +88,7 @@ const Index = () => {
           userType={userType} 
           onAuthClick={handleAuthClick} 
           onLogout={handleLogout}
+          onProfileClick={handleProfileClick}
         />
         <AdminDashboard />
       </div>

@@ -1,10 +1,12 @@
 import { useState } from 'react';
-import { Search, Filter, Star, Plus, Minus, ShoppingCart } from 'lucide-react';
+import { Search, Star, Plus, Minus, ShoppingCart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import FiltersDialog, { FilterOptions } from './FiltersDialog';
+import OrdersModal from './OrdersModal';
+import ProfileModal from './ProfileModal';
 
 const categories = [
   { id: 'all', name: 'All', count: 38 },
@@ -345,7 +347,7 @@ const foodItems = [
     price: 18.99,
     discount: 15,
     rating: 4.7,
-    image: "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=500&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1473094709920-11b28e7367e3?w=500&h=400&fit=crop",
     restaurant: "Creamy Corner",
     category: "pasta"
   },
@@ -462,14 +464,91 @@ interface CartItem {
   image: string;
 }
 
-const CustomerDashboard = () => {
+interface CustomerDashboardProps {
+  searchQuery?: string;
+  onCartToggle?: () => void;
+  onOrdersClick?: () => void;
+  onProfileClick?: () => void;
+}
+
+const CustomerDashboard = ({ 
+  searchQuery = '', 
+  onCartToggle,
+  onOrdersClick,
+  onProfileClick 
+}: CustomerDashboardProps) => {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isOrdersOpen, setIsOrdersOpen] = useState(false);
+  const [isProfileOpen, setIsProfileOpen] = useState(false);
+  const [filters, setFilters] = useState<FilterOptions>({
+    priceRange: [0, 50],
+    categories: [],
+    minRating: 0,
+    hasDiscount: false
+  });
 
-  const filteredItems = selectedCategory === 'all' 
-    ? foodItems 
-    : foodItems.filter(item => item.category === selectedCategory);
+  // Filter items based on search, category, and filters
+  const filteredItems = foodItems.filter(item => {
+    // Search filter
+    if (searchQuery && !item.name.toLowerCase().includes(searchQuery.toLowerCase()) && 
+        !item.description.toLowerCase().includes(searchQuery.toLowerCase()) &&
+        !item.restaurant.toLowerCase().includes(searchQuery.toLowerCase())) {
+      return false;
+    }
+
+    // Category filter
+    if (selectedCategory !== 'all' && item.category !== selectedCategory) {
+      return false;
+    }
+
+    // Advanced filters
+    const finalPrice = item.discount ? item.price * (1 - item.discount / 100) : item.price;
+    
+    if (finalPrice < filters.priceRange[0] || finalPrice > filters.priceRange[1]) {
+      return false;
+    }
+
+    if (filters.categories.length > 0 && !filters.categories.includes(item.category)) {
+      return false;
+    }
+
+    if (item.rating < filters.minRating) {
+      return false;
+    }
+
+    if (filters.hasDiscount && item.discount === 0) {
+      return false;
+    }
+
+    return true;
+  });
+
+  const handleClearFilters = () => {
+    setFilters({
+      priceRange: [0, 50],
+      categories: [],
+      minRating: 0,
+      hasDiscount: false
+    });
+  };
+
+  // Handle external click events
+  const handleCartClick = () => {
+    setIsCartOpen(true);
+    onCartToggle?.();
+  };
+
+  const handleOrdersClick = () => {
+    setIsOrdersOpen(true);
+    onOrdersClick?.();
+  };
+
+  const handleProfileClick = () => {
+    setIsProfileOpen(true);
+    onProfileClick?.();
+  };
 
   const addToCart = (item: typeof foodItems[0]) => {
     setCartItems(prev => {
@@ -519,14 +598,43 @@ const CustomerDashboard = () => {
                   <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
                   <Input
                     placeholder="Search for food, restaurants..."
+                    value={searchQuery}
+                    readOnly
                     className="pl-10 py-3 text-lg border-2 border-gray-200 focus:border-red-500"
                   />
                 </div>
-                <Button variant="outline" className="flex items-center gap-2 px-6">
-                  <Filter className="h-5 w-5" />
-                  Filters
-                </Button>
+                <FiltersDialog 
+                  filters={filters} 
+                  onFiltersChange={setFilters}
+                  onClearFilters={handleClearFilters}
+                />
               </div>
+
+              {/* Show active filters */}
+              {(searchQuery || filters.categories.length > 0 || filters.hasDiscount || filters.minRating > 0) && (
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {searchQuery && (
+                    <Badge variant="secondary" className="px-3 py-1">
+                      Search: "{searchQuery}"
+                    </Badge>
+                  )}
+                  {filters.categories.map(category => (
+                    <Badge key={category} variant="secondary" className="px-3 py-1">
+                      {category.charAt(0).toUpperCase() + category.slice(1)}
+                    </Badge>
+                  ))}
+                  {filters.hasDiscount && (
+                    <Badge variant="secondary" className="px-3 py-1">
+                      Discounted items
+                    </Badge>
+                  )}
+                  {filters.minRating > 0 && (
+                    <Badge variant="secondary" className="px-3 py-1">
+                      {filters.minRating}+ stars
+                    </Badge>
+                  )}
+                </div>
+              )}
             </div>
 
             {/* Categories */}
@@ -548,6 +656,14 @@ const CustomerDashboard = () => {
                   </Button>
                 ))}
               </div>
+            </div>
+
+            {/* Results count */}
+            <div className="mb-6">
+              <p className="text-gray-600">
+                Showing {filteredItems.length} item{filteredItems.length !== 1 ? 's' : ''}
+                {searchQuery && ` for "${searchQuery}"`}
+              </p>
             </div>
 
             {/* Food Items Grid */}
@@ -602,6 +718,17 @@ const CustomerDashboard = () => {
                 </Card>
               ))}
             </div>
+
+            {filteredItems.length === 0 && (
+              <div className="text-center py-12">
+                <div className="text-gray-400 text-6xl mb-4">🍽️</div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">No items found</h3>
+                <p className="text-gray-600 mb-4">Try adjusting your search or filters</p>
+                <Button onClick={handleClearFilters} variant="outline">
+                  Clear all filters
+                </Button>
+              </div>
+            )}
           </div>
 
           {/* Cart Sidebar */}
@@ -667,6 +794,10 @@ const CustomerDashboard = () => {
           )}
         </div>
       </div>
+
+      {/* Modals */}
+      <OrdersModal isOpen={isOrdersOpen} onClose={() => setIsOrdersOpen(false)} />
+      <ProfileModal isOpen={isProfileOpen} onClose={() => setIsProfileOpen(false)} />
     </div>
   );
 };
